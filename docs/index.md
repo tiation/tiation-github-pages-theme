@@ -38,6 +38,19 @@ title: Tiation GitHub Pages Theme
   </div>
 </div>
 
+<div class="screenshot-section">
+  <h2>Live Preview</h2>
+  <div class="screenshot-container">
+    <img src="docs/images/theme-screenshot.jpg" alt="Tiation GitHub Pages Theme Screenshot" class="theme-screenshot">
+    <div class="screenshot-overlay">
+      <div class="screenshot-text">
+        <h3>🌈 Vibrant & Interactive</h3>
+        <p>See the theme in action with cyan fluorescent gradients, smooth animations, and responsive design!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <style>
 :root {
   --primary-cyan: #00f5ff;
@@ -366,6 +379,177 @@ body {
   90% { opacity: 1; }
   100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
+
+.screenshot-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.screenshot-section h2 {
+  color: var(--text-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, var(--primary-cyan), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.screenshot-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.screenshot-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 245, 255, 0.5);
+}
+
+.theme-screenshot {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
+.screenshot-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 245, 255, 0.1) 0%, 
+    rgba(255, 0, 255, 0.1) 50%, 
+    rgba(0, 255, 0, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.screenshot-container:hover .screenshot-overlay {
+  opacity: 1;
+}
+
+.screenshot-text {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.screenshot-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 245, 255, 0.8);
+}
+
+.screenshot-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: white;
+}
+
+/* Fix text visibility issues */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+p, li, td, th {
+  color: var(--text-color);
+}
+
+/* Ensure code blocks are readable */
+code {
+  background: var(--surface-color);
+  color: var(--text-color);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--surface-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+/* Fix blockquote visibility */
+blockquote {
+  color: var(--text-color);
+  border-left: 4px solid var(--primary-cyan);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  background: var(--surface-color);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Fix table visibility */
+table {
+  background: var(--surface-color);
+  color: var(--text-color);
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+th {
+  background: linear-gradient(45deg, var(--primary-cyan), var(--accent-pink));
+  color: white;
+  font-weight: bold;
+}
+
+/* Fix link colors */
+a {
+  color: var(--primary-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-pink);
+  text-shadow: 0 0 5px rgba(0, 245, 255, 0.5);
+}
+
+/* Fix list item colors */
+ul li, ol li {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Fix strong/bold text */
+strong, b {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Fix emphasis text */
+em, i {
+  color: var(--text-color);
+  font-style: italic;
+}
+
 </style>
 
 ## Features
