@@ -1,76 +1,174 @@
-# <span style="color: #ff201e">Quick.</span> The fastest and easiest way to&nbsp;create a&nbsp;GitHub Pages website for your project.
-#### The Quick theme magically transforms your `README.md` into a GitHub Pages site, applying clean and visually appealing styles.
+# Tiation Theme
 
-<p class="ignore">Just see it yourself&thinsp;—&thinsp;<a href="https://devich.github.io/quick/">this page</a> is the same <code>README.md</code> file you’re reading, but with the Quick theme applied:</p>
+A reusable theme package for Tiation projects featuring a modern cyan neon design system with animations and gradients.
 
-<a class="ignore" href="https://devich.github.io/quick/"><img src="assets/img/preview.png" alt="Quick preview"></a>
+## Features
 
-## Quick start
+- 🎨 **Cyan Neon Color Palette**: Custom cyan color scale with special neon accent
+- ✨ **Animations**: Glow and float animations for interactive elements
+- 🌙 **Dark Mode**: Complete dark mode support with CSS variables
+- 🎯 **Utility Classes**: Pre-built utility classes for common Tiation patterns
+- 🔧 **TypeScript**: Full TypeScript support with type definitions
 
-1. Make sure a `README.md` file exists in the root directory of your repo, and GitHub Pages is enabled in your repository settings.
+## Installation
 
-2. Create a file named `_config.yml` in the root directory of your repository. The file should contain the following content:
-```yaml
-remote_theme: devich/quick@0.0.1
+```bash
+npm install @tiation/theme
 ```
 
-3. That’s it! There is no step 3. You now have a GitHub Pages website that’s based on your `README.md` file. The changes will take effect some time after you commit and push your updates to the repository. Enjoy your new website!
+## Usage
 
+### With Tailwind CSS
 
-## Looking for a simple landing page for your project? 
+1. **Import the theme in your `tailwind.config.js`:**
 
-No problem! You’re not restricted to using `readme.md` as the index page of your site. Simply create a file named `index.md`, and this theme will use it as the home page. Feel free to create as many pages as you want and link them within your site.
+```javascript
+const { tiationTheme } = require('@tiation/theme');
 
-For instance, if you need a home page and an ‘About’ page, create files named `index.md` and `about.md`. Inside the `index.md` file, you can link to your ‘About’ page like this:
-
-```md
-[About this project](about)
+module.exports = {
+  ...tiationTheme,
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    // your content paths
+  ],
+};
 ```
 
+2. **Include the CSS in your main CSS file:**
 
-## Fine tuning
-### Additional settings in _config.yml
+```css
+@import '@tiation/theme/styles.css';
+```
 
-You can set additional parameters for the site in the `_config.yml` file.
+### TypeScript Usage
 
-The following options are available:
+```typescript
+import { tiationTheme, tiationColors, tiationUtilities } from '@tiation/theme';
 
-- `lang:` sets the language of the site. E.g. `en-US`, `uk`, `pl`, `fr-CA` and so on. The default value is `en-US`.
-- `bg_color:` sets the background color of your website. Can be `dark`, `light` or `auto`. The default value is `auto`.
-- `theme_color:` sets the main accent color for buttons, links, etc. It can be <nobr><code class="highlighter-rouge" style="color:#c52f21">red</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#d92662">pink</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#c0208a">fuchsia</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#9136a3">purple</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#7540be">violet</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#524ed1">indigo</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#2060de">blue</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#0172ac">azure</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#047878">cyan</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#007a50">jade</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#398712">green</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#a5d601">lime</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#f2df0d">yellow</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ffbf00">amber</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ff9500">pumpkin</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#d24317">orange</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ccc6b4">sand</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#ababab">grey</code>,</nobr> <nobr><code class="highlighter-rouge" style="color:#646b79">zinc</code> or <nobr><code class="highlighter-rouge" style="color:#525f7a">slate</code>.</nobr> The default value is <nobr><code class="highlighter-rouge" style="color:#0172ac">azure</code>.
-- `title:` sets the title of the site. If not set, your repository name will be used.
-- `description`: sets the meta description tag, which typically contains a concise, relevant summary of the page’s content.
-- `keywords`: sets keywords for the page, separated with commas.
-- `gtag`: sets your Google Analytics tag if needed (e.g. G-A1BCDEFGHI).
+// Use in your Tailwind config
+export default {
+  ...tiationTheme,
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+};
+```
 
-Alternatively, you can copy the contents of the `_config.yml` file from the [theme repository](https://github.com/devich/quick/blob/main/_config.yml) into your own `_config.yml` file. This will give you access to all available options at once.
+## Color Palette
 
+### Cyan Scale
+- `cyan-50` to `cyan-900`: Standard cyan color scale
+- `cyan-neon`: Special neon cyan (`#00FFFF`)
 
+### Semantic Colors
+- `background` / `foreground`: Main background and text colors
+- `primary` / `secondary`: Primary and secondary brand colors
+- `accent`: Accent color for highlights
+- `muted`: Muted text and backgrounds
+- `border`: Border colors
+- `card`: Card backgrounds
 
-### Ignoring
+## Animations
 
-If there’s a block in the `README.md` file that you don’t want to display on the GitHub Pages site, you can format this block as HTML and assign the `class="ignore"` attribute to it.
+### Glow Animation
+Creates a pulsing neon glow effect:
+```html
+<div class="animate-glow">Glowing element</div>
+```
 
-<p class="ignore">
-    This paragraph <a href="https://devich.github.io/quick/">will not be displayed</a>
-    on the site because it has an <code>"ignore"</code> class.
-</p>
+### Float Animation
+Creates a gentle floating motion:
+```html
+<div class="animate-float">Floating element</div>
+```
+
+## Utility Classes
+
+### Tiation-specific utilities:
+- `tiation-glow`: Apply glow animation
+- `tiation-float`: Apply float animation
+- `tiation-neon`: Neon cyan text color
+- `tiation-neon-bg`: Neon cyan background
+- `tiation-neon-border`: Neon cyan border
+- `tiation-gradient`: Light gradient background
+- `tiation-gradient-dark`: Dark gradient background
+- `tiation-card`: Card styling
+- `tiation-button-primary`: Primary button styling
+- `tiation-button-outline`: Outline button styling
+- `tiation-badge`: Badge styling
+- `tiation-stat`: Stat number styling
+
+## Example Usage
 
 ```html
-<p class="ignore">
-    This paragraph <a href="https://devich.github.io/quick/">will not be
-    displayed</a> on the site because it has an <code>"ignore"</code> class.
-</p>
+<!-- Hero Section -->
+<section class="tiation-gradient">
+  <div class="container mx-auto px-4">
+    <h1 class="text-5xl font-bold text-gray-900 mb-6">
+      Secure Your
+      <span class="tiation-neon tiation-glow">Digital Life</span>
+    </h1>
+    
+    <button class="tiation-button-primary px-8 py-4 rounded-lg">
+      Get Started
+    </button>
+  </div>
+</section>
+
+<!-- Floating Element -->
+<div class="tiation-float">
+  <div class="w-32 h-32 bg-gradient-to-br from-cyan-neon/20 to-cyan-500/20 rounded-full">
+    <!-- Content -->
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="tiation-stat mb-2">99.9%</div>
+<div class="text-gray-600">Uptime</div>
 ```
 
+## Dark Mode
 
-### More customization
+The theme includes comprehensive dark mode support. Simply add the `dark` class to your HTML element:
 
-If you need to use your own CSS styles, create a file `assets/css/custom.css` in your repository and add your styles to it.
+```html
+<html class="dark">
+  <!-- Your content -->
+</html>
+```
 
-For a custom favicon, just place your file in `PNG` format at `assets/img/favicon.png`.
+## CSS Variables
 
-For full control, clone this repository and modify the template as you need.
+All colors are defined as CSS variables for easy customization:
+
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --cyan-neon: #00FFFF;
+  /* ... more variables */
+}
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Tiation Brand Guidelines
+
+This theme follows the Tiation brand guidelines:
+- **Primary Color**: Cyan Neon (#00FFFF)
+- **Typography**: Modern, clean sans-serif
+- **Animations**: Subtle, purposeful, and performance-optimized
+- **Gradients**: Light, ethereal gradients that complement the neon accent
+- **Spacing**: Generous whitespace for clarity and focus
 
 ## Support
 

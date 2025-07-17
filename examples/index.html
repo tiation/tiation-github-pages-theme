@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiation Theme Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Include Tiation theme CSS variables */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+            --radius: 0.5rem;
+        }
+
+        /* Tiation animations */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px #00FFFF; }
+            50% { box-shadow: 0 0 40px #00FFFF, 0 0 60px #00FFFF; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .tiation-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .tiation-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .tiation-gradient {
+            background: linear-gradient(to bottom right, #ffffff, rgba(236, 254, 255, 0.3), #ffffff);
+        }
+
+        .tiation-button-primary {
+            background-color: #00FFFF;
+            color: #000000;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tiation-button-primary:hover {
+            background-color: #0891b2;
+            box-shadow: 0 0 20px #00FFFF;
+        }
+
+        .tiation-button-outline {
+            border: 2px solid #d1d5db;
+            color: #374151;
+            transition: all 0.3s ease;
+        }
+
+        .tiation-button-outline:hover {
+            border-color: #00FFFF;
+            color: #00FFFF;
+        }
+
+        .tiation-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 9999px;
+            color: #0e7490;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .tiation-stat {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #00FFFF;
+        }
+
+        .tiation-neon {
+            color: #00FFFF;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Hero Section -->
+    <section class="tiation-gradient min-h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <div class="tiation-badge mb-8">
+                    <span class="w-2 h-2 bg-cyan-400 rounded-full mr-2"></span>
+                    Trusted by 10M+ users worldwide
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                    Secure Your
+                    <span class="tiation-neon tiation-glow">Digital Life</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Experience ultimate online freedom with military-grade encryption, 
+                    lightning-fast speeds, and zero-logs privacy protection.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                    <button class="tiation-button-primary px-8 py-4 rounded-lg text-lg">
+                        Start Free Trial
+                    </button>
+                    <button class="tiation-button-outline px-8 py-4 rounded-lg text-lg">
+                        Watch Demo
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="tiation-stat mb-2">99.9%</div>
+                        <div class="text-gray-600">Uptime Guarantee</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="tiation-stat mb-2">75+</div>
+                        <div class="text-gray-600">Global Servers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="tiation-stat mb-2">0</div>
+                        <div class="text-gray-600">Logs Policy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Animation -->
+            <div class="relative mt-16 flex justify-center">
+                <div class="relative">
+                    <div class="w-32 h-32 bg-gradient-to-br from-cyan-200 to-cyan-400 rounded-full flex items-center justify-center tiation-float">
+                        <div class="w-16 h-16 text-cyan-600 text-center leading-16">🌐</div>
+                    </div>
+                    <div class="absolute inset-0 w-32 h-32 bg-cyan-200 rounded-full opacity-20 animate-ping"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Why Choose <span class="tiation-neon">Tiation</span>?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg border shadow-sm">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Military-Grade Security</h3>
+                    <p class="text-gray-600">Advanced encryption protocols protect your data from any threats.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg border shadow-sm">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Lightning Fast</h3>
+                    <p class="text-gray-600">Optimized servers worldwide ensure minimal latency and maximum speed.</p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg border shadow-sm">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🌍</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Global Access</h3>
+                    <p class="text-gray-600">Connect from anywhere in the world with our extensive server network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

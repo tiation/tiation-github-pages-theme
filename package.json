@@ -1,0 +1,48 @@
+{
+  "name": "@tiation/theme",
+  "version": "1.0.0",
+  "description": "A reusable theme package for Tiation projects with cyan neon design system",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "tailwind.config.js",
+    "styles.css"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "theme",
+    "tailwind",
+    "css",
+    "design-system",
+    "tiation"
+  ],
+  "author": "Tiation",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "tailwindcss": "^3.0.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.0.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiation/tiation-github-pages-theme.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tiation/tiation-github-pages-theme/issues"
+  },
+  "homepage": "https://github.com/tiation/tiation-github-pages-theme#readme"
+}
