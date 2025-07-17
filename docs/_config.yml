@@ -1,0 +1,30 @@
+title: Tiation GitHub Pages Theme
+description: Enterprise-grade Jekyll theme for professional GitHub Pages sites
+url: https://tiation.github.io/tiation-github-pages-theme
+baseurl: /tiation-github-pages-theme
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+author:
+  name: Tiation Team
+  email: tiatheone@protonmail.com
+
+# GitHub Pages settings
+repository: tiation/tiation-github-pages-theme
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
