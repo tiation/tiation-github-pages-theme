@@ -3,9 +3,136 @@ layout: default
 title: Tiation GitHub Pages Theme
 ---
 
-# Tiation GitHub Pages Theme
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="glitch" data-text="Tiation GitHub Pages Theme">🚀 Tiation GitHub Pages Theme</h1>
+    <p class="hero-subtitle">⚡ Lightning-fast Jekyll theme that turns boring documentation into stunning experiences</p>
+    <div class="hero-buttons">
+      <a href="#features" class="btn btn-primary pulse">🔥 Explore Features</a>
+      <a href="#quick-start" class="btn btn-secondary">⚡ Quick Start</a>
+    </div>
+  </div>
+  <div class="hero-animation">
+    <div class="floating-icons">
+      <div class="icon">🎨</div>
+      <div class="icon">⚡</div>
+      <div class="icon">🚀</div>
+      <div class="icon">✨</div>
+    </div>
+  </div>
+</div>
 
-**Enterprise-grade Jekyll theme for professional GitHub Pages sites**
+<style>
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  10% { transform: translate(-2px, -2px); }
+  20% { transform: translate(2px, 2px); }
+  30% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  70% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  90% { transform: translate(-2px, -2px); }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: #ff6b6b;
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.icon {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.icon:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.icon:nth-child(2) { top: 60%; left: 20%; animation-delay: 2s; }
+.icon:nth-child(3) { top: 40%; right: 20%; animation-delay: 4s; }
+.icon:nth-child(4) { top: 80%; right: 10%; animation-delay: 6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+</style>
 
 ## Features
 
