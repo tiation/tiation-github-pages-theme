@@ -71,3 +71,10 @@ If you need to use your own CSS styles, create a file `assets/css/custom.css` in
 For a custom favicon, just place your file in `PNG` format at `assets/img/favicon.png`.
 
 For full control, clone this repository and modify the template as you need.
+
+## Support
+
+For support, questions, or custom theme development:
+- **Email**: [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
+- **Issues**: [GitHub Issues](https://github.com/tiation/tiation-github-pages-theme/issues)
+- **Documentation**: [Theme Documentation](https://tiation.github.io/tiation-github-pages-theme/)
