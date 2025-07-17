@@ -38,34 +38,32 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap"
       rel="stylesheet"
     />
-    <!-- Pico.css from CDN -->
-    <link
-      rel="stylesheet"
-      {% if site.theme_color and site.theme_color != "azure" %}
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.{{ site.theme_color }}.min.css"
-      {% else %}
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
-      {% endif %}
-    />
-    <!-- Base styles -->
-    <link rel="stylesheet" href="{{ "assets/css/styles.css" | relative_url }}">
-    <!-- Code highlight styles -->
-    <link rel="stylesheet" href="{{ "assets/css/base16.solarized.css" | relative_url }}">
+    <!-- Tiation Neon Theme -->
+    <link rel="stylesheet" href="{{ "assets/css/neon-theme.css" | relative_url }}">
     <!-- Custom styles -->
     <link rel="stylesheet" href="{{ "assets/css/custom.css" | relative_url }}">
   </head>
 
   <body>
-    <!-- Header section -->
-    <header>&nbsp;</header>
-    <!-- Main section -->
-    <main>
-      <!-- README.md starts from here -->
-      {{ content }}
-      <!-- README.md ends here -->
-    </main>
-    <!-- Footer section -->
-    <footer>&nbsp;</footer>
-    <!-- Custom Js placeholder -->
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+      <header class="site-header">
+        <h1 class="site-title">{{ site.title | escape }}</h1>
+        {% if site.description %}
+          <p class="site-description">{{ site.description | escape }}</p>
+        {% endif %}
+      </header>
+
+      <main class="page-content">
+        <div class="content-card">
+          {{ content }}
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. Visit our <a href="https://github.com/{{ site.github_username | default: 'tiation' }}">GitHub Organization</a> for more projects.</p>
+      </footer>
+    </div>
   </body>
 </html>

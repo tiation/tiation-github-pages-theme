@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Whale body -->
+  <ellipse cx="200" cy="170" rx="150" ry="80" fill="#4A90E2" stroke="#2E5BBA" stroke-width="3"/>
+  
+  <!-- Whale belly -->
+  <ellipse cx="200" cy="200" rx="120" ry="50" fill="#87CEEB" opacity="0.8"/>
+  
+  <!-- Whale tail -->
+  <path d="M 50 170 Q 20 150 30 120 Q 40 140 50 130 Q 60 150 50 170" fill="#4A90E2" stroke="#2E5BBA" stroke-width="2"/>
+  <path d="M 50 170 Q 20 190 30 220 Q 40 200 50 210 Q 60 190 50 170" fill="#4A90E2" stroke="#2E5BBA" stroke-width="2"/>
+  
+  <!-- Whale fins -->
+  <ellipse cx="130" cy="220" rx="40" ry="15" fill="#4A90E2" stroke="#2E5BBA" stroke-width="2" transform="rotate(-20 130 220)"/>
+  <ellipse cx="270" cy="220" rx="40" ry="15" fill="#4A90E2" stroke="#2E5BBA" stroke-width="2" transform="rotate(20 270 220)"/>
+  
+  <!-- Whale eye -->
+  <circle cx="250" cy="140" r="15" fill="white"/>
+  <circle cx="255" cy="135" r="8" fill="black"/>
+  <circle cx="257" cy="132" r="3" fill="white"/>
+  
+  <!-- Whale smile -->
+  <path d="M 280 160 Q 300 170 320 160" fill="none" stroke="#2E5BBA" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Whale blowhole -->
+  <ellipse cx="220" cy="110" rx="8" ry="4" fill="#2E5BBA"/>
+  
+  <!-- Water spout -->
+  <g id="water-spout">
+    <path d="M 220 110 Q 215 90 210 70 Q 205 50 200 30" fill="none" stroke="#00BFFF" stroke-width="3" opacity="0.7"/>
+    <path d="M 220 110 Q 225 90 230 70 Q 235 50 240 30" fill="none" stroke="#00BFFF" stroke-width="3" opacity="0.7"/>
+    <path d="M 220 110 Q 220 90 220 70 Q 220 50 220 30" fill="none" stroke="#00BFFF" stroke-width="4" opacity="0.8"/>
+    
+    <!-- Water droplets -->
+    <circle cx="200" cy="35" r="3" fill="#00BFFF" opacity="0.6"/>
+    <circle cx="210" cy="25" r="2" fill="#00BFFF" opacity="0.7"/>
+    <circle cx="230" cy="28" r="2.5" fill="#00BFFF" opacity="0.6"/>
+    <circle cx="240" cy="35" r="2" fill="#00BFFF" opacity="0.8"/>
+    <circle cx="218" cy="20" r="1.5" fill="#00BFFF" opacity="0.9"/>
+  </g>
+  
+  <!-- Bubbles around whale -->
+  <circle cx="100" cy="100" r="5" fill="#87CEEB" opacity="0.5"/>
+  <circle cx="320" cy="80" r="3" fill="#87CEEB" opacity="0.6"/>
+  <circle cx="80" cy="200" r="4" fill="#87CEEB" opacity="0.4"/>
+  <circle cx="340" cy="180" r="6" fill="#87CEEB" opacity="0.5"/>
+  <circle cx="120" cy="50" r="3" fill="#87CEEB" opacity="0.7"/>
+  <circle cx="350" cy="120" r="4" fill="#87CEEB" opacity="0.3"/>
+  
+  <!-- Animated bubbles -->
+  <circle cx="150" cy="80" r="2" fill="#87CEEB" opacity="0.8">
+    <animate attributeName="cy" values="80;60;80" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="280" cy="60" r="3" fill="#87CEEB" opacity="0.6">
+    <animate attributeName="cy" values="60;40;60" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="90" cy="120" r="2.5" fill="#87CEEB" opacity="0.7">
+    <animate attributeName="cy" values="120;100;120" dur="1.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Whale text -->
+  <text x="200" y="280" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2E5BBA">
+    Hello there! 🐳
+  </text>
+  
+  <!-- Fun animation - whale slightly bobbing -->
+  <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="3s" repeatCount="indefinite"/>
+</svg>

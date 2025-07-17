@@ -35,6 +35,11 @@ title: Tiation GitHub Pages Theme
       <div class="icon">🚀</div>
       <div class="icon">✨</div>
     </div>
+    <!-- Cute whale mascot -->
+    <div class="whale-mascot" onclick="whaleClick()">
+      <img src="docs/images/cute-whale.svg" alt="Cute whale mascot" class="whale-image" id="whale-img">
+      <div class="whale-speech" id="whale-speech">Welcome to Tiation! 🌊</div>
+    </div>
   </div>
 </div>
 
@@ -550,6 +555,209 @@ em, i {
   font-style: italic;
 }
 
+/* Whale mascot styles */
+.whale-mascot {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.whale-image {
+  width: 200px;
+  height: 150px;
+  opacity: 0.9;
+  animation: whaleFloat 4s ease-in-out infinite, whaleGlow 3s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 5px 15px rgba(0, 245, 255, 0.4));
+}
+
+@keyframes whaleFloat {
+  0%, 100% { 
+    transform: translateY(-50%) rotate(0deg) scale(1);
+  }
+  25% { 
+    transform: translateY(-60%) rotate(2deg) scale(1.05);
+  }
+  50% { 
+    transform: translateY(-40%) rotate(0deg) scale(1);
+  }
+  75% { 
+    transform: translateY(-55%) rotate(-2deg) scale(1.05);
+  }
+}
+
+@keyframes whaleGlow {
+  0% { 
+    filter: drop-shadow(0 5px 15px rgba(0, 245, 255, 0.4)) drop-shadow(0 0 20px rgba(74, 144, 226, 0.3));
+  }
+  100% { 
+    filter: drop-shadow(0 8px 25px rgba(0, 245, 255, 0.8)) drop-shadow(0 0 30px rgba(74, 144, 226, 0.6));
+  }
+}
+
+/* Whale interaction on hover */
+.hero-section:hover .whale-image {
+  animation: whaleExcited 1s ease-in-out infinite, whaleGlow 3s ease-in-out infinite alternate;
+  transform: translateY(-50%) scale(1.1);
+}
+
+@keyframes whaleExcited {
+  0%, 100% { 
+    transform: translateY(-50%) scale(1.1) rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-55%) scale(1.15) rotate(5deg);
+  }
+  50% { 
+    transform: translateY(-45%) scale(1.1) rotate(0deg);
+  }
+  75% { 
+    transform: translateY(-55%) scale(1.15) rotate(-5deg);
+  }
+}
+
+/* Responsive whale */
+@media (max-width: 768px) {
+  .whale-mascot {
+    right: 2%;
+    top: 60%;
+  }
+  
+  .whale-image {
+    width: 120px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whale-mascot {
+    display: none; /* Hide on very small screens */
+  }
+}
+
+/* Fun whale tooltip */
+.whale-mascot:before {
+  content: "Click me! 🐳";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, var(--primary-cyan), var(--accent-pink));
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  animation: tooltipBounce 2s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(0, 245, 255, 0.4);
+}
+
+.whale-mascot:hover:before {
+  opacity: 1;
+  animation: tooltipBounce 0.5s ease-in-out infinite;
+}
+
+@keyframes tooltipBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0px); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Whale speech bubble */
+.whale-speech {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: var(--text-dark);
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+  max-width: 200px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.whale-speech:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+}
+
+.whale-speech.show {
+  opacity: 1;
+  animation: speechBubble 3s ease-in-out;
+}
+
+@keyframes speechBubble {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  10% { transform: translateX(-50%) scale(1.1); }
+  20% { transform: translateX(-50%) scale(1); }
+}
+
+/* Splash effect styles */
+.splash-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.splash-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(45deg, var(--primary-cyan), var(--secondary-cyan));
+  border-radius: 50%;
+  animation: splashParticle 1s ease-out forwards;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.8);
+}
+
+@keyframes splashParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-60px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.splash-particle:nth-child(1) { transform: rotate(0deg) translateX(20px); }
+.splash-particle:nth-child(2) { transform: rotate(45deg) translateX(20px); }
+.splash-particle:nth-child(3) { transform: rotate(90deg) translateX(20px); }
+.splash-particle:nth-child(4) { transform: rotate(135deg) translateX(20px); }
+.splash-particle:nth-child(5) { transform: rotate(180deg) translateX(20px); }
+.splash-particle:nth-child(6) { transform: rotate(225deg) translateX(20px); }
+.splash-particle:nth-child(7) { transform: rotate(270deg) translateX(20px); }
+.splash-particle:nth-child(8) { transform: rotate(315deg) translateX(20px); }
+
 </style>
 
 ## Features
@@ -797,7 +1005,98 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { threshold: 0.5 });
   
   sections.forEach(section => observer.observe(section));
+  
+  // Make whale clickable
+  const whaleMascot = document.querySelector('.whale-mascot');
+  if (whaleMascot) {
+    whaleMascot.style.pointerEvents = 'auto';
+    whaleMascot.style.cursor = 'pointer';
+  }
 });
+
+// Whale click functionality
+let whaleClickCount = 0;
+const whaleMessages = [
+  'Welcome to Tiation! 🌊',
+  'Hope you like our theme! 🎨',
+  'I\'m a friendly whale! 🐳',
+  'This theme is whale-y awesome! 🚀',
+  'Thanks for clicking me! ✨',
+  'Ready to dive into coding? 💻',
+  'Whale, whale, whale... what do we have here? 😄',
+  'You\'re really whale-come here! 🎉',
+  'I sea you like interactive elements! 👀',
+  'This is fin-tastic! 🌟'
+];
+
+function whaleClick() {
+  const speechBubble = document.getElementById('whale-speech');
+  const whaleImg = document.getElementById('whale-img');
+  
+  // Get random message
+  const randomMessage = whaleMessages[Math.floor(Math.random() * whaleMessages.length)];
+  
+  // Update message
+  speechBubble.textContent = randomMessage;
+  
+  // Show speech bubble
+  speechBubble.classList.add('show');
+  
+  // Add excited animation to whale
+  whaleImg.style.animation = 'whaleExcited 0.6s ease-in-out, whaleGlow 3s ease-in-out infinite alternate';
+  
+  // Create splash effect
+  createSplashEffect();
+  
+  // Hide speech bubble after 3 seconds
+  setTimeout(() => {
+    speechBubble.classList.remove('show');
+    whaleImg.style.animation = 'whaleFloat 4s ease-in-out infinite, whaleGlow 3s ease-in-out infinite alternate';
+  }, 3000);
+  
+  // Increment click count
+  whaleClickCount++;
+  
+  // Special message after 5 clicks
+  if (whaleClickCount === 5) {
+    setTimeout(() => {
+      speechBubble.textContent = 'You really love clicking me! 😍';
+      speechBubble.classList.add('show');
+      
+      setTimeout(() => {
+        speechBubble.classList.remove('show');
+      }, 2000);
+    }, 3500);
+  }
+  
+  // Reset click count after 10 clicks
+  if (whaleClickCount >= 10) {
+    whaleClickCount = 0;
+  }
+}
+
+// Create splash effect when whale is clicked
+function createSplashEffect() {
+  const whale = document.querySelector('.whale-mascot');
+  const splashContainer = document.createElement('div');
+  splashContainer.className = 'splash-effect';
+  
+  // Create multiple splash particles
+  for (let i = 0; i < 8; i++) {
+    const splash = document.createElement('div');
+    splash.className = 'splash-particle';
+    splash.style.left = Math.random() * 100 + '%';
+    splash.style.animationDelay = Math.random() * 0.2 + 's';
+    splashContainer.appendChild(splash);
+  }
+  
+  whale.appendChild(splashContainer);
+  
+  // Remove splash effect after animation
+  setTimeout(() => {
+    whale.removeChild(splashContainer);
+  }, 1000);
+}
 
 // Create floating particles
 function createParticles() {
