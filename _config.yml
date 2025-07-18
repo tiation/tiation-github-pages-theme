@@ -1,23 +1,110 @@
-# Your site's settings
-lang: en-US # e.g. uk, pl, en-US
-bg_color: dark # can be dark, light or auto
-# theme-color is the main accent color and can be red, pink, fuchsia, purple, violet, indigo, blue, azure, cyan, jade, green,
-# lime, yellow, amber, pumpkin, orange, sand, grey, zinc, slate. See samples on https://picocss.com/docs/version-picker
-theme_color: azure
-title: Quick
-description: Quick. The fastest and easiest way to make a GitHub Pages website for your project.
-keywords: github pages, github readme, github pages theme, jekyll theme, landing page
-gtag: G-X7HSHVZDZT # Google Analytics tag (e.g. G-A1BCDEFGHI). Please replace it with YOUR tag.
+# GitHub Pages Configuration for tiation-github-pages-theme
+# Dark Neon Theme with Cyan Gradient Flares
 
-# If you're using devich/quick as your GitHub Pages remote theme,
-# there's no need to copy the options listed below.
-# This is a service section, it's probably best not to make changes here
-# unless you're confident in what you're doing.
+title: "tiation github pages theme"
+description: "Enterprise-grade solution with professional documentation and dark neon theme"
+baseurl: "/tiation-github-pages-theme"
+url: "https://tiaastor.github.io"
+
+# Theme Configuration
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# SEO and Social
+author:
+  name: "Tia Astor"
+  email: "tia@tiation.com"
+  github: "TiaAstor"
+
+social:
+  github: "TiaAstor"
+  twitter: "TiaAstor"
+
+# GitHub Pages Settings
+repository: "TiaAstor/tiation-github-pages-theme"
+github_username: "TiaAstor"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Documentation"
+    url: "/docs/"
+  - title: "API Reference"
+    url: "/api/"
+  - title: "GitHub"
+    url: "https://github.com/TiaAstor/tiation-github-pages-theme"
+
+# Markdown Settings
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - README_OLD.md
+  - scripts/
+  - .git/
+  - .github/
+
+# Include
+include:
+  - .htaccess
+  - _pages
+  - docs/
+  - api/
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+  examples:
+    output: true
+    permalink: /:collection/:name/
+
+# Default settings
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
+      type: "pages"
     values:
       layout: "default"
-plugins:
-  - jekyll-optional-front-matter
+      author: "Tia Astor"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tia Astor"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"
+      nav: true
+
+# Custom variables
+custom:
+  theme_color: "#00D9FF"
+  accent_color: "#FF0080"
+  background_color: "#0A0A0A"
+  text_color: "#FFFFFF"
+  highlight_color: "#00FF88"
