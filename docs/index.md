@@ -1127,3 +1127,26 @@ document.addEventListener('mousemove', function(e) {
   });
 });
 </script>
+
+## 📚 Additional Resources
+
+- [FAQ](faq.md) - Frequently asked questions
+- [Troubleshooting](troubleshooting.md) - Common issues and solutions
+- [Contributing](../CONTRIBUTING.md) - How to contribute to this project
+- [License](../LICENSE) - Project license information
+
+## 🎨 Theme Information
+
+This project features a **dark neon theme** with:
+- Cyan gradient flares
+- Professional enterprise styling
+- Mobile-responsive design
+- Accessibility features
+
+## 🚀 Quick Links
+
+- [GitHub Repository](https://github.com/TiaAstor/tiation-github-pages-theme)
+- [Live Demo](https://tiaastor.github.io/tiation-github-pages-theme)
+- [Documentation](https://github.com/TiaAstor/tiation-github-pages-theme/wiki)
+- [Issues](https://github.com/TiaAstor/tiation-github-pages-theme/issues)
+
